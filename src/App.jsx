@@ -4,6 +4,8 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import Particles from './components/Particles';
+import Features from './sections/Features';
+import Portfolio from './sections/Portfolio';
 
 function App() {
     return (
@@ -11,6 +13,8 @@ function App() {
             <Particles />
             <Navbar />
             <Hero />
+            <Features/>
+            <Portfolio/>
         </div>
     );
 }

@@ -6,9 +6,9 @@ export default function Hero() {
     return (
         <section
             id="home"
-            className="bg-[#0A0A0A] text-white pt-[30px] sm:pt-[35px] md:pt-[40px] lg:pt-[45px] xl:pt-[50px] 2xl:pt-[130px] pb-20 flex justify-center w-full overflow-hidden "
+            className="bg-[#0A0A0A] text-white pt-[108px] sm:pt-[115px] md:pt-[120px] lg:pt-[125px] xl:pt-[130px] 2xl:pt-[130px] pb-20 flex justify-center w-full overflow-hidden "
         >
-            <div className="max-w-[1440px] w-full flex flex-col lg:flex-row items-center gap-16 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-18 2xl:px-20">
+            <div className="max-w-[1440px] w-full flex flex-col lg:flex-row items-center gap-16 px-6 sm:px-10 md:px-12 lg:px-16 xl:px-18 2xl:px-20">
                 {/* LEFT CONTENT */}
                 <div className="flex flex-col w-[100%] lg:w-[55%]">
                     {/* Label */}
@@ -18,14 +18,14 @@ export default function Hero() {
 
                     {/* Main Titles */}
                     <h1
-                        className="text-[32px] sm:text-[42px] md:text-[52px] lg:text-[44px] xl:text-[60px] 
+                        className="text-[30px] sm:text-[42px] md:text-[52px] lg:text-[44px] xl:text-[60px] 
  font-bold leading-tight font-montserrat tracking-[1px]"
                     >
                         Hi, I'm <span className="text-[#00E5FF]">ASIF HASAN</span>
                     </h1>
 
                     {/* Animated Job Titles */}
-                    <div className="text-[30px] sm:text-[42px] md:text-[52px] lg:text-[44px] xl:text-[56px]  font-bold mt-2 text-gray-200 flex font-montserrat tracking-[1px]">
+                    <div className="text-[28px] sm:text-[42px] md:text-[52px] lg:text-[44px] xl:text-[56px]  font-bold mt-2 text-gray-200 flex font-montserrat tracking-[1px]">
                         <TypeAnimation
                             sequence={[
                                 'A Frontend Engineer',
@@ -44,7 +44,7 @@ export default function Hero() {
 
                     {/* Description */}
                     <p
-                        className="mt-4 text-gray-400 leading-relaxed font-poppins tracking-[1.2px] text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] 2xl:text-[19px] max-w-[90%] sm:max-w-[85%] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[60%] 2xl:max-w-[55%]"
+                        className="mt-4 text-gray-400 leading-relaxed font-poppins tracking-[1.2px] text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] 2xl:text-[19px] max-w-[85%] sm:max-w-[75%] md:max-w-[70%] lg:max-w-[70%] xl:max-w-[60%] 2xl:max-w-[55%]"
                     >
                         I create engaging digital experiences using animation, clean UI, and modern
                         tools. I focus on making interactions smooth, meaningful, and visually

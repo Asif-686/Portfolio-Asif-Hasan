@@ -39,7 +39,7 @@ export default function Navbar() {
                             />
                             <p
                                 className="
-                                font-montserrat font-bold tracking-wide text-gray-200 
+                                font-audiowide font-bold tracking-wide text-gray-200 
                                 text-lg xs:text-xl sm:text-2xl lg:text-[26px] xl:text-[30px] 2xl:text-[34px]
                             "
                             >
