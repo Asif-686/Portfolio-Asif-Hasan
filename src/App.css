@@ -1,59 +1,125 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 /* Tailwind Required Import (NEW Vite Plugin Way) */
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Smooth scrolling for nav links */
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /* Remove default body spacing */
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #0A0A0A;
-  color: white;
-  font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a0a;
+    color: white;
+    font-family: system-ui, sans-serif;
 }
 
-
 @keyframes pulseSlow {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.1); opacity: 0.8; }
-  100% { transform: scale(1); opacity: 1; }
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 @keyframes bounceSlow {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .animate-pulseSlow {
-  animation: pulseSlow 3s ease-in-out infinite;
+    animation: pulseSlow 3s ease-in-out infinite;
 }
 
 .animate-bounceSlow {
-  animation: bounceSlow 2.5s ease-in-out infinite;
+    animation: bounceSlow 2.5s ease-in-out infinite;
 }
 @keyframes float {
-  0% { transform: translateY(0px); opacity: 0.2; }
-  50% { transform: translateY(-20px); opacity: 0.6; }
-  100% { transform: translateY(0px); opacity: 0.2; }
+    0% {
+        transform: translateY(0px);
+        opacity: 0.2;
+    }
+    50% {
+        transform: translateY(-20px);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 0.2;
+    }
 }
 
 .animate-float {
-  animation: float infinite ease-in-out;
+    animation: float infinite ease-in-out;
 }
 
 /*Hero-banner card design */
 @keyframes bgPan {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-40px); }
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-40px);
+    }
 }
 
 .animate-bg-pan {
-  animation: bgPan 15s linear infinite alternate;
+    animation: bgPan 15s linear infinite alternate;
 }
+/* portfolio section Animations*/
+
+/* Animated fill bar */
+  .skill-fill {
+    width: 0;
+    animation: fillBar 1.8s cubic-bezier(.45,.05,.55,.95) forwards;
+    background: linear-gradient(90deg,
+      #00E5FF 0%,
+      #32DFFF 25%,
+      #4ECFFF 50%,
+      #37BDF7 75%,
+      #4FC3F7 100%
+    );
+    box-shadow: 0 0 18px rgba(0,229,255,0.45);
+  }
+
+  /* Moving glow pointer */
+  .skill-pointer {
+    position: absolute;
+    top: -4px;
+    width: 14px;
+    height: 14px;
+    background: #00E5FF;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0,229,255,0.8);
+    animation: glowPointer 1.8s cubic-bezier(.45,.05,.55,.95) forwards;
+  }
+
+  @keyframes fillBar {
+    from { width: 0; }
+    to   { width: var(--target-width); }
+  }
+
+  @keyframes glowPointer {
+    from { left: 0; opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+

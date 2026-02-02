@@ -8,7 +8,7 @@ export default function Hero() {
             id="home"
             className="bg-[#0A0A0A] text-white pt-[108px] sm:pt-[115px] md:pt-[120px] lg:pt-[125px] xl:pt-[130px] 2xl:pt-[130px] pb-20 flex justify-center w-full overflow-hidden "
         >
-            <div className="max-w-[1440px] w-full flex flex-col lg:flex-row items-center gap-16 px-6 sm:px-10 md:px-12 lg:px-16 xl:px-18 2xl:px-20">
+            <div className="max-w-[1440px] w-full flex flex-col lg:flex-row items-center gap-16 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-18 2xl:px-20">
                 {/* LEFT CONTENT */}
                 <div className="flex flex-col w-[100%] lg:w-[55%]">
                     {/* Label */}

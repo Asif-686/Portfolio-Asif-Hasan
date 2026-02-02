@@ -41,20 +41,34 @@ export default function Portfolio() {
             likes: 412,
             img: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1400&q=60',
         },
+        {
+            title: 'Modern Banking UI',
+            category: 'UI/UX',
+            likes: 690,
+            img: 'https://images.unsplash.com/photo-1558882263-95a64ed59b4d?auto=format&fit=crop&w=1400&q=60',
+        },
+        {
+            title: 'Travel Booking Website',
+            category: 'Web App',
+            likes: 900,
+            img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=60',
+        },
     ];
 
     const [activeFilter, setActiveFilter] = useState('All Projects');
+    const [showAll, setShowAll] = useState(false);
 
     const filtered =
         activeFilter === 'All Projects'
             ? projects
             : projects.filter((p) => p.category === activeFilter);
 
+    const visibleProjects = showAll ? filtered : filtered.slice(0, 6);
+
     return (
-        <div
-            id="projects"
-            className="w-full py-10 sm:py-12 md:py-14 lg:py-16 xl:py-18 2xl:py-20 px-6 sm:px-10 lg:px-20"
-        >
+        <div id="projects" className="w-full py-10 sm:py-12 md:py-14 lg:py-16 xl:py-18 2xl:py-20 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-18 2xl:px-20">
+            
+            {/* Heading */}
             <div className="text-center mb-12">
                 <p className="text-[#00E5FF] tracking-[2px] text-sm uppercase font-poppins">
                     Visit my portfolio and keep your feedback
@@ -69,18 +83,18 @@ export default function Portfolio() {
                 {filters.map((f, index) => (
                     <button
                         key={index}
-                        onClick={() => setActiveFilter(f)}
+                        onClick={() => { setActiveFilter(f); setShowAll(false); }}
                         className={`
-              px-6 py-3 rounded-xl text-sm font-poppins transition-all duration-300
-              shadow-[0_6px_20px_rgba(0,0,0,0.35)]
-              bg-gradient-to-b from-[#18191D] to-[#101114]
-              border border-white/5
-              ${
-                  activeFilter === f
-                      ? 'text-[#00E5FF] font-semibold bg-gradient-to-r from-[#00E5FF] to-[#4FC3F7] shadow-[0_0_20px_rgba(0,229,255,0.6)] scale-[1.02]'
-                      : 'text-gray-200 font-normal hover:text-white hover:border-[#00E5FF]/50 hover:shadow-[0_0_14px_rgba(0,229,255,0.35)]'
-              }
-            `}
+                            px-6 py-3 rounded-xl text-sm font-poppins transition-all duration-300
+                            shadow-[0_6px_20px_rgba(0,0,0,0.35)]
+                            bg-gradient-to-b from-[#18191D] to-[#101114]
+                            border border-white/5
+                            ${
+                                activeFilter === f
+                                    ? 'text-[#00E5FF] font-semibold bg-gradient-to-r from-[#00E5FF] to-[#4FC3F7] shadow-[0_0_20px_rgba(0,229,255,0.6)] scale-[1.02]'
+                                    : 'text-gray-200 hover:text-white hover:border-[#00E5FF]/50 hover:shadow-[0_0_14px_rgba(0,229,255,0.35)]'
+                            }
+                        `}
                     >
                         {f}
                     </button>
@@ -88,27 +102,27 @@ export default function Portfolio() {
             </div>
 
             {/* CARDS */}
-            <div className="flex flex-wrap gap-6 justify-between">
-                {filtered.map((item, idx) => (
+            <div className="flex flex-wrap gap-6 justify-center ">
+                {visibleProjects.map((item, idx) => (
                     <div
                         key={idx}
                         className="
-              w-full sm:w-[48%] lg:w-[32%]
-              bg-[#101114] rounded-2xl p-5 
-              border border-white/5 
-              shadow-[0_8px_30px_rgba(0,0,0,0.55)]
-              transition-all duration-500
-              hover:-translate-y-2 hover:border-[#00E5FF]/60 hover:shadow-[0_14px_45px_rgba(0,229,255,0.35)]
-              group
-            "
+                            w-full sm:w-[48%] lg:w-[32%]
+                            bg-[#101114] rounded-2xl p-5 
+                            border border-[#00E5FF] sm:border-white/5 
+                            shadow-[0_8px_30px_rgba(0,0,0,0.55)]
+                            transition-all duration-500
+                            md:hover:-translate-y-2 md:hover:border-[#00E5FF]/60 md:hover:shadow-[0_14px_45px_rgba(0,229,255,0.35)] 
+                            group 
+                        "
                     >
-                        <div className="relative w-full h-[220px] md:h-[250px] rounded-xl overflow-hidden">
+                        <div className="relative w-full h-[220px] md:h-[250px] rounded-xl overflow-hidden ">
                             <img
                                 src={item.img}
-                                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                                className="w-full h-full object-cover transition-all duration-700 md:group-hover:scale-110 md:group-hover:brightness-110"
                                 alt={item.title}
                             />
-                            <div className="absolute top-3 right-3 bg-black/45 backdrop-blur-md w-8 h-8 rounded-md flex items-center justify-center border border-white/20 group-hover:border-[#00E5FF]/70 transition-all">
+                            <div className="absolute top-3 right-3 bg-black/45 backdrop-blur-md w-8 h-8 rounded-md flex items-center justify-center border border-white/20 md:group-hover:border-[#00E5FF]/70 transition-all">
                                 <FiExternalLink className="text-white text-[18px]" />
                             </div>
                         </div>
@@ -122,12 +136,30 @@ export default function Portfolio() {
                         </h3>
 
                         <div className="flex items-center gap-2 text-gray-400 text-sm mt-3 font-poppins">
-                            <FiHeart className="text-gray-300 text-[16px] group-hover:text-[#00E5FF] transition-colors" />
+                            <FiHeart className="text-gray-300 text-[16px] md:group-hover:text-[#00E5FF] transition-colors" />
                             {item.likes}
                         </div>
                     </div>
                 ))}
             </div>
+
+            {/* SEE MORE / SEE LESS */}
+            {filtered.length > 6 && (
+                <div className="flex justify-center mt-10">
+                    <button
+                        onClick={() => setShowAll(!showAll)}
+                        className="
+                            px-8 py-3 rounded-xl font-poppins text-white text-sm
+                            bg-[#00E5FF] hover:bg-[#4FC3F7]
+                            shadow-[0_0_20px_rgba(0,229,255,0.4)]
+                            transition-all duration-300
+                        "
+                    >
+                        {showAll ? 'See Less' : 'See More'}
+                    </button>
+                </div>
+            )}
+
         </div>
     );
 }

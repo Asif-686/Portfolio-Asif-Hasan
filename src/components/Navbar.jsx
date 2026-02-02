@@ -20,7 +20,7 @@ export default function Navbar() {
             {({ open, close }) => (
                 <>
                     {/* TOP NAV */}
-                    <div className="max-w-[1440px] mx-auto w-full py-4 flex justify-between items-center px-4 sm:px-8 lg:px-16 xl:px-18">
+                    <div className="max-w-[1440px] mx-auto w-full py-4 flex justify-between items-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-18 2xl:px-20">
                         {/* LOGO with scaling */}
                         <div className="flex items-center gap-3 select-none cursor-pointer">
                             <div

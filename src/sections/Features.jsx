@@ -39,7 +39,7 @@ export default function Features() {
 
     return (
         <div
-            className="w-full max-w-[1440px] py-10 sm:py-12 md:py-14 lg:py-16 xl:py-18 2xl:py-20 px-6 sm:px-10 md:px-12 lg:px-16 xl:px-18 2xl:px-20 mx-auto"
+            className="w-full max-w-[1440px] py-10 sm:py-12 md:py-14 lg:py-16 xl:py-18 2xl:py-20 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-18 2xl:px-20 mx-auto"
             id="features"
         >
             {/* Header */}
@@ -64,7 +64,7 @@ export default function Features() {
                         className="
         flex flex-col gap-4 p-7 
         w-full sm:w-[48%] lg:w-[31.5%] xl:w-[32%]
-        bg-[#111214] border border-white/10 rounded-xl
+        bg-[#111214] border border-[#00E5FF] sm:border-white/5 rounded-xl
         shadow-[0px_10px_35px_rgba(0,0,0,0.6)] 
         hover:shadow-[0px_15px_40px_rgba(0,229,255,0.15)]
         hover:-translate-y-2 transition-all duration-300
