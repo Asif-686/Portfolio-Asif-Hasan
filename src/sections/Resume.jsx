@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FiCheckCircle, FiStar, FiBriefcase, FiMonitor, FiCode, FiPenTool } from 'react-icons/fi';
-import { SkillBar } from '../components/Skillbar';
+import { SkillBar } from '../components/SkillBar';
 
 export default function Resume() {
     const tabs = ['Design Skills', 'Experience', 'Education', 'Other Skills'];
